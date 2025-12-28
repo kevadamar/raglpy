@@ -1,0 +1,8 @@
+langchain 
+faiss-cpu 
+transformers
+langchain_text_splitters
+langchain_huggingface
+sentence-transformers<3.0
+langchain-community
+google-generativeai
