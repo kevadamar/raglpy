@@ -9,10 +9,13 @@ This repository contains experimental implementations of RAG systems for learnin
 ## Tech Stack
 
 - **LangChain** - Framework for LLM applications
-- **FAISS** - Vector similarity search
+- **FAISS** - Vector similarity search (learn-1.ipynb)
+- **ChromaDB** - Persistent vector database (learn-2.ipynb)
 - **Sentence Transformers** - Text embeddings (all-MiniLM-L6-v2)
-- **Google Generative AI** - Gemini 2.5 Flash for answer generation
-- **Transformers** - Hugging Face transformers library
+- **NLTK** - Text splitting for document chunking
+- **Google Generative AI** - Gemini 2.5 Flash for answer generation and embeddings (gemini-embedding-001)
+- **PyPDF** - PDF document loading
+- **LangChain Community** - Document loaders and utilities
 
 ## Setup
 
@@ -37,12 +40,24 @@ cp .env.example .env
 
 ## Usage
 
-See [learn-1.ipynb](learn-1.ipynb) for a complete example demonstrating:
-- Loading and chunking documents
-- Generating embeddings with Sentence Transformers
-- Building a FAISS vector index
+This repository contains multiple notebooks demonstrating different RAG implementations:
+
+### [learn-1.ipynb](learn-1.ipynb) - Basic RAG with FAISS
+A simple RAG implementation demonstrating:
+- Loading and chunking documents with RecursiveCharacterTextSplitter
+- Generating embeddings with Sentence Transformers (all-MiniLM-L6-v2)
+- Building a FAISS vector index for similarity search
 - Retrieving relevant chunks based on queries
 - Generating answers using Google Gemini
+
+### [learn-2.ipynb](learn-2.ipynb) - RAG with ChromaDB
+A more advanced RAG implementation featuring:
+- Loading PDF documents with PyPDFLoader
+- Text chunking with NLTKTextSplitter
+- Using Google Generative AI embeddings (gemini-embedding-001)
+- Persistent vector storage with ChromaDB
+- LangChain RAG chain with RunnablePassthrough
+- Multi-language support (Indonesian queries)
 
 ## License
 
